@@ -3,7 +3,6 @@ import { NextResponse } from 'next/server';
 
 export async function middleware(req, event) {
   const { pathname, origin } = req.nextUrl;
-  console.log('pathname', pathname);
 
   /**
    * token will exist if the user is logged in
