@@ -7,7 +7,7 @@ export async function middleware(req, event) {
   /**
    * token will exist if the user is logged in
    */
-  const token = await getToken({ req, secret: process.env.JWT_SECRET });
+  const token = await getToken({ req, secret: process.env.NEXT_PUBLIC_JWT_SECRET });
 
   /** Allow the request to continue
    * if the user is logged in (token exists)

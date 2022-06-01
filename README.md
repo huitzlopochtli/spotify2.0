@@ -19,9 +19,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ### First Add Environment Variables
 
 ```bash
-SPOTIFY_ID=""
-SPOTIFY_SECRET=""
-JWT_SECRET=""
+NEXT_PUBLIC_CLIENT_ID=""
+NEXT_PUBLIC_CLIENT_SECRET=""
+NEXT_PUBLIC_JWT_SECRET=""
 ```
 ### Then, run the development server:
 

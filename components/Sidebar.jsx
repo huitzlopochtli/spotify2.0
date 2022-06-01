@@ -13,16 +13,20 @@ import { useEffect, useState } from 'react';
 import useSpotify from '../hooks/useSpotify';
 
 function Sidebar({ session }) {
-  const spotifyApi = useSpotify();
+  const SpotifyAPI = useSpotify();
   const [playLists, setPlayLists] = useState([]);
 
   useEffect(() => {
-    if (spotifyApi.getAccessToken()) {
-      spotifyApi.getUserPlaylists().then((data) => {
+    if (SpotifyAPI.getAccessToken()) {
+      console.log(SpotifyAPI);
+      SpotifyAPI.getUserPlaylists().then((data) => {
         setPlayLists(data.body.items);
+        console.log(data);
       });
     }
-  }, [session, spotifyApi]);
+  }, [session, SpotifyAPI]);
+
+  console.log(playLists);
 
   return (
     <div className='text-xm h-screen overflow-y-scroll border-r border-gray-900 p-5 text-gray-500 '>
