@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div className=''>
       <Head>
-        <title>Vibify</title>
+        <title>Spotify 2.0 By Khondokar Hashib</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
