@@ -20,7 +20,7 @@ function Player({ session }) {
   const [currentTrackId, setCurrentTrackId] =
     useRecoilState(currentTrackIdState);
   const [isPlaying, setIsPlaying] = useRecoilState(isPlayingState);
-  const [volume, setVolume] = useState(50);
+  const [volume, setVolume] = useState(0);
 
   const songInfo = useSongInfo(currentTrackId);
 
@@ -30,6 +30,7 @@ function Player({ session }) {
         setCurrentTrackId(data.body?.item?.id);
         spotifyApi.getMyCurrentPlaybackState().then((data) => {
           setIsPlaying(data.body?.is_playing);
+          setVolume(data.body?.device?.volume_percent);
         });
       });
     }
@@ -50,7 +51,6 @@ function Player({ session }) {
   useEffect(() => {
     if (spotifyApi.getAccessToken() && !currentTrackId) {
       fetchCurrentSong();
-      setVolume(50);
     }
   }, [currentTrackId, spotifyApi, session]);
 
